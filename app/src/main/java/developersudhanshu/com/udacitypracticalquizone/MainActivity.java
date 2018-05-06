@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         tilEmail = (TextInputLayout) findViewById(R.id.til_email);
         tilDescription = (TextInputLayout) findViewById(R.id.til_desc);
 
+        if(savedInstanceState != null){
+            username.setText(savedInstanceState.getString(Constants.USERNAME_KEY));
+            email.setText(savedInstanceState.getString(Constants.EMAIL_KEY));
+            description.setText(savedInstanceState.getString(Constants.DESCRIPTION_KEY));
+        }
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
